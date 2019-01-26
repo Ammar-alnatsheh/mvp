@@ -36,8 +36,8 @@ class Filter extends React.Component {
   }
 
   handleSubmit(event) {
-      console.log(this.state);
     event.preventDefault();
+    this.props.getEvents(this.state);
   }
 
   render() {
