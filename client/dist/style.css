@@ -6,8 +6,35 @@ body {
   color: #0A2463;
 }
 
+.app {
+  padding: 20px;
+}
+
 .main {
-    padding: 30px;
+    padding: 20px;
     border: 2px solid rgb(66, 153, 66);
     border-radius: 5px;
+    width: 750px;
+}
+
+.nav-bar .search-bar {
+  height: 25px;
+  width: 500px;
+  font-size: 15px;
+  margin: 5px;
+}
+
+.nav-bar .search-bar-bttn {
+  height: 30px;
+  width: 50px;
+  font-size: 15px;
+  background-color: rgb(116, 218, 116);
+}
+
+.category-row {
+  padding: 10px 0px 0px 0px;
+}
+
+.category-row label {
+  padding: 0px 15px 0px 0px;
 }

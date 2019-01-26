@@ -9,12 +9,13 @@ class Filter extends React.Component {
         name: '',
     }
     this.handleChange = this.handleChange.bind(this);
+    this.handleNameChange = this.handleNameChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
     this.setState({
-        category: [true,false,false,false,false,false,false,false,false,false,false,false],
+        category: [false,false,false,false,false,false,false,false,false,false,false,false],
         name: '',
     });
   }
@@ -27,28 +28,61 @@ class Filter extends React.Component {
         name: this.state.name,
     });
   }
+  handleNameChange(event) {
+    this.setState({
+        category: this.state.category,
+        name: event.target.value,
+    });
+  }
 
   handleSubmit(event) {
+      console.log(this.state);
     event.preventDefault();
   }
 
   render() {
     return (
-        <form className="filter">
-            <input type="checkbox" name="category" value="0" onChange={this.handleChange} checked>General</input>
-            <input type="checkbox" name="category" value="1" onChange={this.handleChange} >Acadmic</input>
-            <input type="checkbox" name="category" value="2" onChange={this.handleChange} >Art</input>
-            <input type="checkbox" name="category" value="3" onChange={this.handleChange} >Cars</input>
-            <input type="checkbox" name="category" value="4" onChange={this.handleChange} >Family</input>
-            <input type="checkbox" name="category" value="5" onChange={this.handleChange} >Kids</input>
-            <input type="checkbox" name="category" value="6" onChange={this.handleChange} >Marketing</input>
-            <input type="checkbox" name="category" value="7" onChange={this.handleChange} >Musical</input>
-            <input type="checkbox" name="category" value="8" onChange={this.handleChange} >Nature</input>
-            <input type="checkbox" name="category" value="9" onChange={this.handleChange} >Politics</input>
-            <input type="checkbox" name="category" value="10" onChange={this.handleChange}>Social</input>
-            <input type="checkbox" name="category" value="11" onChange={this.handleChange}>Technology</input>
+        <form className="filter" onSubmit={this.handleSubmit}>
 
-            <input type="submit" value="Submit"></input>
+            <div className="nav-bar">
+                <label>Posted by: </label>
+                <input className="search-bar" type="text" placeholder="Search.." onChange={this.handleNameChange}/>
+                <input className="search-bar-bttn" type="submit" value="GO!" />
+            </div>
+
+            <div className="category">
+                <div className="category-row">
+                    <input type="checkbox" name="category_0" value="0" onChange={this.handleChange} />
+                    <label>General</label>
+                    <input type="checkbox" name="category_1" value="1" onChange={this.handleChange} />
+                    <label>Acadmic</label>
+                    <input type="checkbox" name="category_2" value="2" onChange={this.handleChange} />
+                    <label>Art</label>
+                    <input type="checkbox" name="category_3" value="3" onChange={this.handleChange} />
+                    <label>Cars</label>
+                </div>
+                <div className="category-row">
+                    <input type="checkbox" name="category_4" value="4" onChange={this.handleChange} />
+                    <label>Family</label>
+                    <input type="checkbox" name="category_5" value="5" onChange={this.handleChange} />
+                    <label>Kids</label>
+                    <input type="checkbox" name="category_6" value="6" onChange={this.handleChange} />
+                    <label>Marketing</label>
+                    <input type="checkbox" name="category_7" value="7" onChange={this.handleChange} />
+                    <label>Musical</label>
+                </div>
+                <div className="category-row">
+                    <input type="checkbox" name="category_8" value="8" onChange={this.handleChange} />
+                    <label>Nature</label>
+                    <input type="checkbox" name="category_9" value="9" onChange={this.handleChange} />
+                    <label>Politics</label>
+                    <input type="checkbox" name="category_10" value="10" onChange={this.handleChange} />
+                    <label>Social</label>
+                    <input type="checkbox" name="category_11" value="11" onChange={this.handleChange} />
+                    <label>Technology</label>
+                </div>
+            </div>
+            
         </form>
     );
   }

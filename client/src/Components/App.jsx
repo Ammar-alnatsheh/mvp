@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-//import Filter from './Filter.jsx';
+import Filter from './Filter.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -33,7 +33,7 @@ class App extends React.Component {
        <h2>Events in san Francisco</h2>
        <hr></hr>
        <div className="main">
-        {/* <Filter/> */}
+        <Filter/>
        </div>
        </div>
     );
