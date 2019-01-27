@@ -66,8 +66,33 @@ body {
   background-color: beige;
   cursor: pointer;
 }
+
+.events-list {
+  padding: 20px;
+}
+
 .events-list label{
-  padding: 0px 0px 0px 20px;
   font-size: 20px;
   font-weight: bold;
+}
+
+.event-entry {
+  border: 1px solid rgb(119, 6, 124);
+  padding: 10px;
+  margin: 10px;
+  max-width: 1270px;
+}
+
+.event-header {
+  background-color: beige;
+  font-size: 16px;
+  font-weight: bold;
+  border: 1px solid rgb(119, 6, 124);
+  padding: 10px;
+  margin: 10px;
+  max-width: 1270px;
+}
+
+.event-header label {
+  padding: 0px 100px 0px 10px;
 }

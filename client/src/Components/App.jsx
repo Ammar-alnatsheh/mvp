@@ -8,7 +8,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      events: [1,2,3]
+      events: []
     }
     this.getEvents = this.getEvents.bind(this);
   }
@@ -21,20 +21,20 @@ class App extends React.Component {
     this.getEvents(obj);
   }
 
-  getEvents(catagory) {
-    console.log(catagory);
-    // axios.get(`/events/${catagory}`)
-    //   .then(res => {
-    //     this.setState({
-    //       events: res.data,
-    //     });
-    //   });
+  getEvents(catagories) {
+    axios.get('/events')
+      .then(res => {
+        console.log(res.data);
+        this.setState({
+          events: res.data,
+        });
+      });
   }
 
   render() {
     return (
       <div className="app">
-       <h2>Events in san Francisco</h2>
+       <h2>Events in San Francisco</h2>
        <hr></hr>
        <div className="main">
           <Filter getEvents={this.getEvents}/>
@@ -45,6 +45,7 @@ class App extends React.Component {
        </div>
        <div className="events-list">
           <label>Select categories and click GO!</label>
+          <div>all events for next 5 days only!</div>
           <EventList events={this.state.events}/>
        </div>
        </div>

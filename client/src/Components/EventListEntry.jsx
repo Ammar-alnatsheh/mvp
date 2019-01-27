@@ -3,7 +3,7 @@ import React from 'react';
 var EventListEntry = (props) => (
   <div className="event-entry">
     <div>
-      hello world
+      {props.event.name}
     </div>
     
   </div>
