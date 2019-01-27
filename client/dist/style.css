@@ -3,7 +3,7 @@
 body {
   font-family:'Montserrat',sans-serif;
   background-color: #f7f7f7;
-  color: #0A2463;
+  color: rgb(119, 6, 124);
 }
 
 .app {
@@ -12,9 +12,14 @@ body {
 
 .main {
     padding: 20px;
-    border: 2px solid rgb(66, 153, 66);
-    border-radius: 5px;
-    width: 750px;
+    display: inline-flex;
+}
+
+.filter {
+  padding: 20px;
+  border: 2px solid rgb(119, 6, 124);
+  border-radius: 5px;
+  width: 750px;
 }
 
 .nav-bar .search-bar {
@@ -28,7 +33,8 @@ body {
   height: 30px;
   width: 50px;
   font-size: 15px;
-  background-color: rgb(116, 218, 116);
+  background-color: beige;
+  cursor: pointer;
 }
 
 .category-row {
@@ -37,4 +43,25 @@ body {
 
 .category-row label {
   padding: 0px 15px 0px 0px;
+}
+
+.san-francisco {
+  background-image: url('./SanFrancisco.jpg');
+  background-size: cover;
+  height: 100%;
+  width: 500px;
+}
+
+.post {
+  padding: 0px 10px 0px 10px;
+}
+.post-event {
+  height: 40px;
+  width: 500px;
+  padding: 1px 0px 1px 0px;
+  border: 2px solid rgb(119, 6, 124);
+  font-size: 16px;
+  font-weight: bold;
+  background-color: beige;
+  cursor: pointer;
 }

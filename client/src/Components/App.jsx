@@ -13,16 +13,21 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.getEvents(0);
+    const obj = {
+      category: [false,false,false,false,false,false,false,false,false,false,false,false],
+      name: '',
+    }
+    this.getEvents(obj);
   }
 
   getEvents(catagory) {
-    axios.get(`/events/${catagory}`)
-      .then(res => {
-        this.setState({
-          events: res.data,
-        });
-      });
+    console.log(catagory);
+    // axios.get(`/events/${catagory}`)
+    //   .then(res => {
+    //     this.setState({
+    //       events: res.data,
+    //     });
+    //   });
   }
 
 
@@ -33,7 +38,11 @@ class App extends React.Component {
        <h2>Events in san Francisco</h2>
        <hr></hr>
        <div className="main">
-        <Filter/>
+          <Filter getEvents={this.getEvents}/>
+          <div className="post">
+            <div className="san-francisco"></div>
+            <input className="post-event" type="submit" value="Create an Event"/>
+          </div>
        </div>
        </div>
     );
