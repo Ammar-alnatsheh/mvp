@@ -55,6 +55,7 @@ body {
 .post {
   padding: 0px 10px 0px 10px;
 }
+
 .post-event {
   height: 40px;
   width: 500px;
@@ -64,4 +65,9 @@ body {
   font-weight: bold;
   background-color: beige;
   cursor: pointer;
+}
+.events-list label{
+  padding: 0px 0px 0px 20px;
+  font-size: 20px;
+  font-weight: bold;
 }

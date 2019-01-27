@@ -1,13 +1,14 @@
 import React from 'react';
 import axios from 'axios';
 import Filter from './Filter.jsx';
+import EventList from './EventList.jsx';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      events: []
+      events: [1,2,3]
     }
     this.getEvents = this.getEvents.bind(this);
   }
@@ -30,8 +31,6 @@ class App extends React.Component {
     //   });
   }
 
-
-
   render() {
     return (
       <div className="app">
@@ -43,6 +42,10 @@ class App extends React.Component {
             <div className="san-francisco"></div>
             <input className="post-event" type="submit" value="Create an Event"/>
           </div>
+       </div>
+       <div className="events-list">
+          <label>Select categories and click GO!</label>
+          <EventList events={this.state.events}/>
        </div>
        </div>
     );
