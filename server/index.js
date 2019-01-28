@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '..', 'client', 'dist')));
 
 app.get('/events', (req, res) => {
-  pSql.selectEvents(req.body, (err, data) => {
+  pSql.selectEvents(null, (err, data) => {
     if (err) {
       res.status(501).send(err);
     } else {

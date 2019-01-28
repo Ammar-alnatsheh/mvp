@@ -1,7 +1,7 @@
 const pSql = require('./postgres_index');
 
 function selectEvents(values, callback) {
-  pSql.query('SELECT * FROM events WHERE id = ($1)', [1], (err, data) => {
+  pSql.query('SELECT * FROM events', [], (err, data) => {
     if (err) {
       callback(err.stack);
     } else {
