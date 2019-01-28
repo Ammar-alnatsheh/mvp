@@ -82,6 +82,9 @@ body {
   margin: 10px;
   max-width: 1270px;
 }
+.event-entry label {
+  padding: 0px 100px 0px 10px;
+}
 
 .event-header {
   background-color: beige;
