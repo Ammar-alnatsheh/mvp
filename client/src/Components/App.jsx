@@ -15,18 +15,18 @@ class App extends React.Component {
 
   componentDidMount() {
     const obj = {
-      category: [false,false,false,false,false,false,false,false,false,false,false,false],
-      name: '',
+      name: 'Orion Yost',
     }
     this.getEvents(obj);
   }
 
   getEvents(catagories) {
-    axios.get('/events')
-      .then(res => {
-        console.log(res.data);
+    fetch('/events')
+    .then(response => response.json())
+      .then(data => {
+        console.log(data);
         this.setState({
-          events: res.data,
+          events: data,
         });
       });
   }
