@@ -8,7 +8,7 @@ function generate1000Record(callback) {
     const name = faker.name.findName();
     const title = faker.name.title();
     const catagory = faker.random.number({'min': 0,'max': 12});
-    const date = faker.date.between('2019-01-28', '2019-02-05');
+    const date = faker.date.between('2019-01-28', '2019-02-05', 'timezone = null');
     const time = parseFloat( '' + faker.random.number({'min': 0,'max': 24}) + '.' + faker.random.number({'min': 0,'max': 60}) );
     const description = faker.lorem.paragraph();
 
