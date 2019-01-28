@@ -83,7 +83,29 @@ body {
   max-width: 1270px;
 }
 .event-entry label {
-  padding: 0px 100px 0px 10px;
+  display:inline-block;
+  padding: 0px 120px 0px 10px;
+}
+
+.event-entry .event-name {
+  width: 100px;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.event-entry .event-title {
+  width: 100px;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.event-entry .event-description {
+  width: 100px;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .event-header {
@@ -97,5 +119,9 @@ body {
 }
 
 .event-header label {
-  padding: 0px 100px 0px 10px;
+  padding: 0px 120px 0px 10px;
+}
+
+.event-entry .event-name {
+  width: 10px;
 }
