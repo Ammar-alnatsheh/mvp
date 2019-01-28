@@ -37,7 +37,19 @@ class Filter extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.getEvents(this.state);
+    let filter = {};
+    let category = [];
+
+    this.state.category.forEach((el,idx) => {
+        if(el) {
+            category.push(idx);
+        }
+    });
+
+    filter.name = this.state.name;
+    filter.category = category;
+
+    this.props.getEvents(filter);
   }
 
   render() {
