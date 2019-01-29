@@ -67,7 +67,7 @@ body {
   cursor: pointer;
 }
 
-.events-list {
+table {
   padding: 20px;
 }
 
@@ -76,52 +76,46 @@ body {
   font-weight: bold;
 }
 
-.event-entry {
+th {
   border: 1px solid rgb(119, 6, 124);
   padding: 10px;
   margin: 10px;
   max-width: 1270px;
-}
-.event-entry label {
-  display:inline-block;
-  padding: 0px 120px 0px 10px;
+  height: 40px;
 }
 
-.event-entry .event-name {
-  width: 100px;
-  white-space: nowrap; 
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.event-entry .event-title {
-  width: 100px;
-  white-space: nowrap; 
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.event-entry .event-description {
-  width: 100px;
-  white-space: nowrap; 
-  overflow: hidden;
-  text-overflow: ellipsis;
+td {
+  border-bottom: 1px solid rgb(119, 6, 124);
+  padding: 10px;
+  margin: 10px;
+  max-width: 1270px;
+  height: 40px;
 }
 
 .event-header {
   background-color: beige;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
+  color: black;
   border: 1px solid rgb(119, 6, 124);
   padding: 10px;
   margin: 10px;
   max-width: 1270px;
 }
 
-.event-header label {
-  padding: 0px 120px 0px 10px;
+.event-entry .event-description {
+  max-height: 20px;
+  max-width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.event-entry .event-name {
-  width: 10px;
+.show-description {
+  border: 0px;
+  background-image: url('enlarge.png');
+  max-width: 3px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
 }
