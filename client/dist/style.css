@@ -128,16 +128,6 @@ td {
   transform: translate(-50%, -50%);
 }
 
-.close-botton {
-  position: relative;
-  font-size: 20px;
-  font-weight: bold;
-  top: 10px;
-  border-radius: 50%;
-  border: 0;
-  background-color: beige;
-  color: rgb(119, 6, 124);
-}
 .display-event {
   border: 1px solid rgb(119, 6, 124);
   padding: 10px;
@@ -157,4 +147,29 @@ td {
   min-height: 150px;
   font-size: 20px;
   overflow-y: scroll;
+}
+
+.event-form {
+  border: 1px solid rgb(119, 6, 124);
+  padding: 10px;
+  display: grid;
+  color: rgb(119, 6, 124);
+  background-color: beige;
+  width: 750px;
+  font-size: 16px;
+}
+
+.event-form input, select{
+  font-size: 16px;
+}
+
+.submit-event {
+  font-size: 20px;
+  color: rgb(119, 6, 124);
+}
+
+.delete-events {
+  border: 1px solid rgb(119, 6, 124);
+  font-size: 20px;
+  background-color: beige;
 }

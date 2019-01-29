@@ -1,6 +1,8 @@
 import React from 'react';
+import { PortalWithState } from 'react-portal';
 import Filter from './Filter.jsx';
 import EventList from './EventList.jsx';
+import EventForm from './EventForm.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -11,6 +13,8 @@ class App extends React.Component {
       filteredEvents: [],
     }
     this.getEvents = this.getEvents.bind(this);
+    this.postEvent = this.postEvent.bind(this);
+    this.deleteEvent = this.deleteEvent.bind(this);
   }
 
   componentDidMount() {
@@ -22,6 +26,20 @@ class App extends React.Component {
           filteredEvents: data,
         });
       });
+  }
+
+  deleteEvent() {
+    const id = parseInt(prompt("Please enter the post id you want to delete"));
+    fetch(`/event/${id}/`, {
+      method: 'DELETE',
+    })
+    .then(response => {
+      alert('event is succsessfuly deleted');
+    })
+    .catch(err => {
+      alert('cant delete event', err);
+    });
+    
   }
 
   getEvents(catagories) {
@@ -45,6 +63,10 @@ class App extends React.Component {
 
   }
 
+  postEvent(event) {
+    console.log('post event');
+  }
+
   render() {
     return (
       <div className="app">
@@ -54,7 +76,18 @@ class App extends React.Component {
           <Filter getEvents={this.getEvents}/>
           <div className="post">
             <div className="san-francisco"></div>
-            <input className="post-event" type="submit" value="Create an Event"/>
+            <PortalWithState closeOnOutsideClick closeOnEsc>
+              {({ openPortal, closePortal, isOpen, portal }) => (
+                <React.Fragment>
+                  <input className="post-event" type="submit" value="Create an Event" onClick={openPortal}/>
+                  {portal(
+                    <div className="portal">
+                    <EventForm postEvents={this.postEvents}/>
+                    </div>
+                  )}
+                </React.Fragment>
+              )}
+            </PortalWithState>
           </div>
        </div>
        <div className="events-list">
@@ -62,6 +95,7 @@ class App extends React.Component {
           <div>all events for next 5 days only!</div>
           <EventList events={this.state.filteredEvents}/>
        </div>
+       <button className="delete-events" onClick={this.deleteEvent}>Delete Event</button>
        </div>
     );
   }

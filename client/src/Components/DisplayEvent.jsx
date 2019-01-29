@@ -13,7 +13,7 @@ var DisplayEvent = (props) => {
         <label>Description</label>
         <textarea className="description" disabled>{props.event.description}</textarea>
         <br></br>
-        <label>hit ESC or click outside to close</label>
+        <label>ESC or click outside to close</label>
 
     </form>
   );

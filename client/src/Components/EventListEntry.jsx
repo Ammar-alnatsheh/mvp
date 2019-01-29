@@ -27,7 +27,6 @@ class EventListEntry extends React.Component {
                 <td className="show-description" onClick={openPortal}></td>
                 {portal(
                   <div className="portal">
-                  <button className="close-botton" onClick={closePortal}>X</button>
                   <DisplayEvent event={this.props.event}/>
                   </div>
                 )}
