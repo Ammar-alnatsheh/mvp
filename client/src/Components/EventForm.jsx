@@ -5,7 +5,6 @@ class EventForm extends React.Component {
     super(props);
 
     this.state = {
-        name: '',
     }
     this.handleChange = this.handleChange.bind(this);
   }
@@ -13,18 +12,16 @@ class EventForm extends React.Component {
   handleChange(event) {
     event.preventDefault();
     let obj = {};
-    obj.name = event.target.name || '';
-    obj.title = event.target.title || '';
-    obj.description = event.target.description || '';
-    obj.catagory = parseInt(event.target.catagory) || 0;
-    obj.date = event.target.date || new Date();
-    let time = '' + event.target.time || '00:00 pm';
-    time = time.slice(0,6);
-    time.replace(':','.');
-    time = parseFloat(time);
+    obj.name = event.target.name.value || '';
+    obj.title = event.target.title.value || '';
+    obj.description = event.target.description.value || '';
+    obj.catagory = parseInt(event.target.catagory.value) || 0;
+    obj.date = event.target.date.value || new Date();
+    let time = '' + event.target.time.value || '00:00';
+    time = parseFloat(time.slice(0,2) + '.' + time.slice(3,5));
     obj.time = time;
-
-    console.log(obj);
+    
+    this.props.postEvent(obj)
   }
 
   render() {

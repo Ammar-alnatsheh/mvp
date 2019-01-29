@@ -34,7 +34,7 @@ class App extends React.Component {
       method: 'DELETE',
     })
     .then(response => {
-      alert('event is succsessfuly deleted');
+      alert('event is succsessfuly deleted', response);
     })
     .catch(err => {
       alert('cant delete event', err);
@@ -64,7 +64,25 @@ class App extends React.Component {
   }
 
   postEvent(event) {
-    console.log('post event');
+    fetch(`/event`, {
+      method: 'POST',
+      mode: "cors", // no-cors, cors, *same-origin
+      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+      credentials: "same-origin", // include, *same-origin, omit
+      headers: {
+          "Content-Type": "application/json",
+          // "Content-Type": "application/x-www-form-urlencoded",
+      },
+      redirect: "follow", // manual, *follow, error
+      referrer: "no-referrer", // no-referrer, *client
+      body: JSON.stringify(event),
+    })
+    .then(response => {
+      alert('event is succsessfuly posted', response);
+    })
+    .catch(err => {
+      alert('cant post event', err);
+    });
   }
 
   render() {
@@ -82,7 +100,7 @@ class App extends React.Component {
                   <input className="post-event" type="submit" value="Create an Event" onClick={openPortal}/>
                   {portal(
                     <div className="portal">
-                    <EventForm postEvents={this.postEvents}/>
+                    <EventForm postEvent={this.postEvent}/>
                     </div>
                   )}
                 </React.Fragment>
