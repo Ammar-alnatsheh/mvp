@@ -1,7 +1,7 @@
 const pSql = require('./postgres_index');
 
 function selectEvents(values, callback) {
-  pSql.query('SELECT * FROM events', [], (err, data) => {
+  pSql.query("SELECT * FROM events WHERE date >= NOW() AND date <= NOW() + interval '5 day' ORDER BY date", [], (err, data) => {
     if (err) {
       callback(err.stack);
     } else {
