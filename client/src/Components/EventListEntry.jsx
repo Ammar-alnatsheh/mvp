@@ -1,5 +1,6 @@
 import React from 'react';
-import EventForm from './EventForm.jsx';
+import { PortalWithState } from 'react-portal';
+import DisplayEvent from './DisplayEvent.jsx';
 
 class EventListEntry extends React.Component {
   constructor(props) {
@@ -9,11 +10,6 @@ class EventListEntry extends React.Component {
       isHidden: true,
       catagory: ['General','Acadmic','Art','Cars','Family','Kids','Marketing','Musical','Nature','Politics','Social','Technology'],
     }
-    this.showEvent = this.showEvent.bind(this);
-  }
-
-  showEvent() {
-    alert(this.props.event.description);
   }
 
   render() {
@@ -25,7 +21,19 @@ class EventListEntry extends React.Component {
         <td>{('' + this.props.event.date).slice(0,10)}</td>
         <td>{this.props.event.time}</td>
         <td className="event-description">{this.props.event.description}</td>
-        <td className="show-description" onClick={this.showEvent}></td>
+        <PortalWithState closeOnOutsideClick closeOnEsc>
+            {({ openPortal, closePortal, isOpen, portal }) => (
+              <React.Fragment>
+                <td className="show-description" onClick={openPortal}></td>
+                {portal(
+                  <div className="portal">
+                  <button className="close-botton" onClick={closePortal}>X</button>
+                  <DisplayEvent event={this.props.event}/>
+                  </div>
+                )}
+              </React.Fragment>
+            )}
+        </PortalWithState>
     </tr>
     );
   }

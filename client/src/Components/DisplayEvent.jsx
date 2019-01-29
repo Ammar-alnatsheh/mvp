@@ -3,28 +3,19 @@ import React from 'react';
 var DisplayEvent = (props) => {
     const catagory = ['General','Acadmic','Art','Cars','Family','Kids','Marketing','Musical','Nature','Politics','Social','Technology'];
     return (
-    <div className="display-event">
-        <form>
-            <label>Name</label>
-            <input type="text" placeholder={props.event.name}></input>
+    <form className="display-event">
+        <label></label>
+        <label>Name</label>
+        <input type="text" placeholder={props.event.name} disabled></input>
+        <label></label>
+        <label>Title</label>
+        <input type="text" placeholder={props.event.title} disabled></input>
+        <label>Description</label>
+        <textarea className="description" disabled>{props.event.description}</textarea>
+        <br></br>
+        <label>hit ESC or click outside to close</label>
 
-            <label>Title</label>
-            <input type="text" placeholder={props.event.title}></input>
-
-            <label>catagory</label>
-            <input type="text" placeholder={catagory[props.event.catagory]}></input>
-
-            <label>Date</label>
-            <input type="text" placeholder={('' + props.event.date).slice(0,10)}></input>
-
-            <label>Time</label>
-            <input type="text" placeholder={props.event.time}></input>
-
-            <label>Description</label>
-            <input type="text" placeholder={props.event.description}></input>
-
-        </form>
-    </div>
+    </form>
   );
 };
 

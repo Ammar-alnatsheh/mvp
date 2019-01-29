@@ -119,3 +119,42 @@ td {
   background-repeat: no-repeat;
   cursor: pointer;
 }
+
+.portal {
+  z-index: 1;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.close-botton {
+  position: relative;
+  font-size: 20px;
+  font-weight: bold;
+  top: 10px;
+  border-radius: 50%;
+  border: 0;
+  background-color: beige;
+  color: rgb(119, 6, 124);
+}
+.display-event {
+  border: 1px solid rgb(119, 6, 124);
+  padding: 10px;
+  display: grid;
+  color: rgb(119, 6, 124);
+  background-color: beige;
+  width: 750px;
+}
+
+.display-event input, label, textarea{
+  padding: 5px;
+  font-size: 16px;
+}
+
+.description {
+  padding: 10px;
+  min-height: 150px;
+  font-size: 20px;
+  overflow-y: scroll;
+}
