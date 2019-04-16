@@ -78,7 +78,7 @@ class App extends React.Component {
       body: JSON.stringify(event),
     })
     .then(response => {
-      alert('event is succsessfuly posted', response);
+      alert('event is succsessfuly posted');
     })
     .catch(err => {
       alert('cant post event', err);

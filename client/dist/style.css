@@ -20,6 +20,7 @@ body {
   border: 2px solid rgb(119, 6, 124);
   border-radius: 5px;
   width: 750px;
+  font-size: 15px;
 }
 
 .nav-bar .search-bar {
@@ -32,7 +33,6 @@ body {
 .nav-bar .search-bar-bttn {
   height: 30px;
   width: 50px;
-  font-size: 15px;
   background-color: beige;
   cursor: pointer;
 }
