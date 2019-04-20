@@ -25,10 +25,11 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 - Node 6.13.0
 - React 16.7.0
 - React-dome 16.7.0
-- MySql 2.14.1
+- Pg 7.8.0
 - Body-parser 1.17.2
 - Express 4.15.4
 - JQuery 3.2.1
+- react-portal 4.2.0
 
 for development enviroment 
 - @babel/core 7.2.2
@@ -39,9 +40,7 @@ for development enviroment
 - babel-loader 8.0.4
 - faker 4.1.0
 - regenerator-runtime 0.13.1
-- webpack 2.2.
-
-## Development
+- webpack 2.2.1
 
 ### Installing Dependencies
 
@@ -58,7 +57,7 @@ npm start
 ```
 
 ### Installing Database
-[MySQL](https://dev.mysql.com/downloads/installer/).
+[Postgres](https://www.postgresql.org/download/(https://dev.mysql.com/downloads/installer/).
 ```sh
 Modifiy the username and password after installing MySQL in /database/config.js file
 ```
