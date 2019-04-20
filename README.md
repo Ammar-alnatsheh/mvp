@@ -49,9 +49,6 @@ From within the root directory:
 ```sh
 npm install
 npm install -g webpack
-npm run create-db
-npm run seed-db
-npm run test
 npm run react-dev
 npm start
 ```
@@ -59,13 +56,5 @@ npm start
 ### Installing Database
 [Postgres](https://www.postgresql.org/download/(https://dev.mysql.com/downloads/installer/).
 ```sh
-Modifiy the username and password after installing MySQL in /database/config.js file
-```
-
-### Installing Docker
-[Docker](https://docs.docker.com/v17.12/install).
-```sh
-To build an image use docker-compose build
-To run the docker-compose image use docker-compose up
-To seed the database in the URL type /reviews/seed
+Modifiy the username and password after installing Postgres in /database/config.js file if needed.
 ```
