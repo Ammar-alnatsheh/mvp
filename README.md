@@ -42,6 +42,16 @@ for development enviroment
 - regenerator-runtime 0.13.1
 - webpack 2.2.1
 
+### Installing Database
+[Postgres](https://www.postgresql.org/download/).
+```sh
+- Modifiy the username and password after installing Postgres in /database/config.js file if needed.
+in the database directory run psql -f schema.sql to create the databse.
+- Database directory has seedDB file to generate fake data for test if needed, run node seedDB to generate tsv file.
+- In schema.sql file there is hints how to seed the database from the tsv file that been generated.
+
+```
+
 ### Installing Dependencies
 
 From within the root directory:
@@ -53,8 +63,3 @@ npm run react-dev
 npm start
 ```
 
-### Installing Database
-[Postgres](https://www.postgresql.org/download/(https://dev.mysql.com/downloads/installer/).
-```sh
-Modifiy the username and password after installing Postgres in /database/config.js file if needed.
-```
